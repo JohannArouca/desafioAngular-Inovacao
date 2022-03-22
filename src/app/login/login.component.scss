@@ -15,21 +15,8 @@ form {
     align-items: center;
     justify-content: center;
 
-    input {
-        height: 40px;
-        width: 100%;
-        box-sizing: border-box;
-        padding-left: 8px;
-        margin-top: 15px;
-        border-width: 0 0 2px;
-
-        &:focus {
-            outline: none;
-            border-color: $color-primary;
-        }
-    }
-
     .loginError {
+        margin-top: -15px;
         color: $color-warn;
         visibility: hidden;
     }

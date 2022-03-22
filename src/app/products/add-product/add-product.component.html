@@ -1,54 +1,50 @@
 <main class="background">
   <button mat-raised-button color="basic" class="leaveButton" (click)="leave()">
     Sair
+    <i class="material-icons">exit_to_app</i>
   </button>
   <mat-card>
     <mat-card-title>Produto</mat-card-title>
 
     <form [formGroup]="addForm">
       <div class="column">
-        <span class="editTextTitle">Imagem</span>
+        <button
+          class="imageButton"
+          mat-raised-button
+          color="primary"
+          type="button"
+          (click)="fileInput.click()"
+        >
+          <i class="material-icons">file_upload</i>
+          Carregar imagem
+        </button>
         <input
+          #fileInput
+          name="file"
+          id="file"
           formControlName="base64"
           class="editInput"
-          id="imageInput"
           type="file"
           name=""
           id=""
           accept="image/jpeg"
           (change)="onChangeFile($event)"
         />
-      </div>
-      <div class="column">
-        <span class="editTextTitle">Código de barras</span>
-        <input
-          formControlName="codigoBarras"
-          class="editInput"
-          id="gtinEdit"
-          type="number"
-          name=""
-          id=""
-        />
 
-        <span class="editTextTitle">Nome</span>
-        <input
-          formControlName="nome"
-          class="editInput"
-          id="nameEdit"
-          type="text"
-          name=""
-          id=""
-        />
+        <mat-form-field appearance="fill">
+          <mat-label>Código de barras</mat-label>
+          <input type="number" formControlName="codigoBarras" matInput />
+        </mat-form-field>
 
-        <span class="editTextTitle">Preço</span>
-        <input
-          formControlName="preco"
-          class="editInput"
-          id="priceEdit"
-          type="number"
-          name=""
-          id=""
-        />
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input formControlName="nome" matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Preço</mat-label>
+          <input type="number" formControlName="preco" matInput />
+        </mat-form-field>
       </div>
 
       <div class="buttons">

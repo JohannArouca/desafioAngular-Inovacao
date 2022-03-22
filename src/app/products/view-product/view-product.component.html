@@ -1,29 +1,17 @@
 <main class="background">
   <button mat-raised-button color="basic" class="leaveButton" (click)="leave()">
     Sair
+    <i class="material-icons">exit_to_app</i>
   </button>
   <mat-card *ngIf="product$ | async as product">
-    <mat-card-title>Produto</mat-card-title>
     <div class="viewArea">
       <div class="column">
-        <span class="viewTextTitle">Imagem</span>
         <img class="imgView" src="{{ product.base64 }}" />
       </div>
       <div class="column">
-        <span class="viewTextTitle">Código de barras</span>
-        <span class="viewText" id="gtinView">
-          {{ product.codigoBarras }}
-        </span>
+        <span class="productName">{{ product.nome }}</span>
 
-        <span class="viewTextTitle">Nome</span>
-        <span class="viewText" id="nameView">
-          {{ product.nome }}
-        </span>
-
-        <span class="viewTextTitle">Preço</span>
-        <span class="viewText" id="priceView">
-          {{ product.preco }}
-        </span>
+        <span class="productPrice"> R$ {{ product.preco }} </span>
       </div>
     </div>
     <div class="buttons">

@@ -2,18 +2,16 @@
   <mat-card>
     <mat-card-title>Entre com seu usuário</mat-card-title>
     <form [formGroup]="loginForm" class="loginForm">
-      <input
-        formControlName="login"
-        class="loginInput"
-        type="text"
-        placeholder="Login"
-      />
-      <input
-        formControlName="password"
-        class="loginInput"
-        type="password"
-        placeholder="Senha"
-      />
+      <mat-form-field appearance="fill">
+        <mat-label>Login</mat-label>
+        <input formControlName="login" type="text" matInput />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input formControlName="password" type="text" matInput />
+      </mat-form-field>
+
       <p [ngStyle]="{ visibility: visibility }" class="loginError">
         Login ou senha inválido(s)!
       </p>

@@ -1,3 +1,5 @@
+$color-primary: #3f51b5;
+
 .leaveButton {
     position: fixed;
     top: 0;
@@ -19,6 +21,17 @@ mat-card {
         margin: 10px;
     }
 
+    .productName {
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    .productPrice {
+        font-weight: bold;
+        font-size: 20px;
+        color: $color-primary;
+    }
+
     .viewTextTitle {
         font-weight: bold;
     }
@@ -29,7 +42,8 @@ mat-card {
     }
 
     img {
-        width: 300px;
+        max-width: 300px;
+        max-height: 400px;
     }
 
     .buttons {

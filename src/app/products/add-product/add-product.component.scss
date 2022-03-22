@@ -16,23 +16,12 @@ mat-card {
         margin: 10px;
     }
 
-    .editTextTitle {
-        font-weight: bold;
+    input[type="file"] {
+        display: none;
     }
 
-    input {
-        height: 40px;
-        width: 100%;
-        box-sizing: border-box;
-        padding-left: 8px;
-        border-width: 0 0 2px;
-        margin-top: 3px;
-        margin-bottom: 20px;
-
-        &:focus {
-            outline: none;
-            border-color: $color-primary;
-        }
+    .imageButton {
+        margin-bottom: 15px;
     }
 
     .buttons {

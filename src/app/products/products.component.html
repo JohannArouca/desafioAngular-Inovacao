@@ -1,6 +1,7 @@
 <main class="background">
   <button mat-raised-button color="basic" class="leaveButton" (click)="leave()">
     Sair
+    <i class="material-icons">exit_to_app</i>
   </button>
 
   <mat-card>
@@ -8,11 +9,12 @@
 
     <div class="btnAndFilter">
       <button (click)="addProduct()" mat-raised-button color="primary">
+        <i class="material-icons">add</i>
         Adicionar
       </button>
 
       <mat-form-field appearance="standard">
-        <mat-label>Filter</mat-label>
+        <mat-label>Filtrar</mat-label>
         <input
           matInput
           (keyup)="applyFilter($event)"
@@ -75,7 +77,7 @@
             (click)="editProduct(element.codigoBarras)"
             class="tableButton"
             mat-mini-fab
-            color="accent"
+            color="primary"
             aria-label="Example icon button with a menu icon"
           >
             <i class="material-icons">edit</i>
@@ -84,7 +86,7 @@
             (click)="deleteProduct(element.codigoBarras)"
             class="tableButton"
             mat-mini-fab
-            color="warn"
+            color="primary"
             aria-label="Example icon button with a menu icon"
           >
             <i class="material-icons">delete</i>
