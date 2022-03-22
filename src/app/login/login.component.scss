@@ -1,0 +1,40 @@
+$color-primary: #3f51b5;
+$color-warn: #f44336;
+
+mat-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        height: 40px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 8px;
+        margin-top: 15px;
+        border-width: 0 0 2px;
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+        }
+    }
+
+    .loginError {
+        color: $color-warn;
+        visibility: hidden;
+    }
+
+    button {
+        width: 100%;
+    }
+}

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+$color-basic: #fff;
+$color-primary: #3f51b5;
+$color-accent: #ff4081;
+$color-warn: #f44336;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(120deg, $color-primary, #004581);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,32 @@
+.leaveButton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+mat-card {
+    width: 80%;
+
+    .btnAndFilter {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        margin-bottom: 15px;
+        width: 200px;
+    }
+
+    table {
+        width: 100%;
+
+        .tableImage {
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        .tableButton {
+            margin-right: 8px;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+$color-primary: #3f51b5;
+
+.leaveButton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+mat-card {
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;
+        margin: 10px;
+    }
+
+    .editTextTitle {
+        font-weight: bold;
+    }
+
+    input {
+        height: 40px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 8px;
+        border-width: 0 0 2px;
+        margin-top: 3px;
+        margin-bottom: 20px;
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        .saveButton {
+            margin-left: 10px;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.leaveButton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+mat-card {
+    .viewArea {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;
+        margin: 10px;
+    }
+
+    .viewTextTitle {
+        font-weight: bold;
+    }
+
+    .viewText {
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 300px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}
