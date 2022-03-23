@@ -15,7 +15,12 @@
       <p [ngStyle]="{ visibility: visibility }" class="loginError">
         Login ou senha inválido(s)!
       </p>
-      <button mat-raised-button color="primary" (click)="login()">
+      <button
+        [disabled]="loginForm.invalid"
+        mat-raised-button
+        color="primary"
+        (click)="login()"
+      >
         Entrar
       </button>
     </form>

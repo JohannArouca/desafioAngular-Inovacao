@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../core/auth/auth.service';
 import { TokenService } from '../core/token/token.service';
@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
     );
 
     this.loginForm = this.formBuilder.group({
-      login: [''],
-      password: [''],
+      login: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 
