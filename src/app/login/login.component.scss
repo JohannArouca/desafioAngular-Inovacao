@@ -7,21 +7,25 @@ mat-card {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .loginError {
-        margin-top: -15px;
-        color: $color-warn;
-        visibility: hidden;
+    mat-card-title {
+        margin-bottom: 30px;
     }
 
-    button {
-        width: 100%;
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .loginError {
+            margin-top: -15px;
+            color: $color-warn;
+            visibility: hidden;
+        }
+
+        button {
+            width: 100%;
+        }
     }
 }

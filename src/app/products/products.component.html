@@ -8,11 +8,6 @@
     <mat-card-title>Produtos</mat-card-title>
 
     <div class="btnAndFilter">
-      <button (click)="addProduct()" mat-raised-button color="primary">
-        <i class="material-icons">add</i>
-        Adicionar
-      </button>
-
       <mat-form-field appearance="standard">
         <mat-label>Filtrar</mat-label>
         <input
@@ -22,13 +17,18 @@
           #input
         />
       </mat-form-field>
+
+      <button (click)="addProduct()" mat-raised-button color="primary">
+        <i class="material-icons">add</i>
+        Adicionar
+      </button>
     </div>
 
     <table
       mat-table
       [dataSource]="dataSource"
       class="mat-elevation-z8"
-      *ngIf="element_data.length"
+      *ngIf="element_data.length; else loading"
     >
       <!-- Codigo de barras Column -->
       <ng-container matColumnDef="codigoBarras">
@@ -104,5 +104,10 @@
         </td>
       </tr>
     </table>
+    <ng-template #loading>
+      <div class="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
   </mat-card>
 </main>
