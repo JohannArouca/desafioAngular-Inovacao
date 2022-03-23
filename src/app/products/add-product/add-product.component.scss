@@ -8,12 +8,28 @@ $color-primary: #3f51b5;
 }
 
 mat-card {
-    .column {
+    form {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: start;
-        margin: 10px;
+        align-items: center;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: start;
+            margin: 0 10px;
+        }
+    }
+
+    .imgPreview {
+        height: 172px;
     }
 
     input[type="file"] {
@@ -25,12 +41,14 @@ mat-card {
     }
 
     .buttons {
+        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: flex-end;
-        justify-content: flex-end;
+        justify-content: end;
 
         .saveButton {
+            margin-right: 10px;
             margin-left: 10px;
         }
     }
