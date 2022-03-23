@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, ReplaySubject } from 'rxjs';
 import { TokenService } from 'src/app/core/token/token.service';
@@ -39,9 +39,9 @@ export class AddProductComponent implements OnInit {
 
           this.addForm = this.formBuilder.group({
             base64: [''],
-            codigoBarras: [this.product.codigoBarras],
-            nome: [this.product.nome],
-            preco: [this.product.preco],
+            codigoBarras: [this.product.codigoBarras, Validators.required],
+            nome: [this.product.nome, Validators.required],
+            preco: [this.product.preco, Validators.required],
           });
         },
         (err) => console.log(err)
@@ -49,9 +49,9 @@ export class AddProductComponent implements OnInit {
     } else {
       this.addForm = this.formBuilder.group({
         base64: [''],
-        codigoBarras: [''],
-        nome: [''],
-        preco: [''],
+        codigoBarras: ['', Validators.required],
+        nome: ['', Validators.required],
+        preco: ['', Validators.required],
       });
     }
   }

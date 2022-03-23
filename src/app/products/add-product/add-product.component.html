@@ -58,6 +58,7 @@
           Cancelar
         </button>
         <button
+          [disabled]="addForm.invalid"
           mat-raised-button
           color="primary"
           class="saveButton"
