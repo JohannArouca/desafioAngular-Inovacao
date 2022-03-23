@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { TokenService } from 'src/app/core/token/token.service';
 import { Product } from '../product';
 import { ProductsService } from '../produts.service';
@@ -16,6 +16,7 @@ export class AddProductComponent implements OnInit {
   product$: Observable<Product>;
   product: Product;
   codigoBarras: string;
+  base64Output: string;
 
   constructor(
     private router: Router,
@@ -33,6 +34,8 @@ export class AddProductComponent implements OnInit {
       this.product$.subscribe(
         (res) => {
           this.product = res;
+
+          this.base64Output = this.product.base64;
 
           this.addForm = this.formBuilder.group({
             base64: [''],
@@ -64,6 +67,7 @@ export class AddProductComponent implements OnInit {
           codigoBarras,
           nome,
           preco,
+          base64: this.base64Output,
         })
         .subscribe((res: any) => {
           if (res.sucesso) {
@@ -78,6 +82,7 @@ export class AddProductComponent implements OnInit {
           codigoBarras,
           nome,
           preco,
+          base64: this.base64Output,
         })
         .subscribe((res: any) => {
           if (res.sucesso) {
@@ -89,41 +94,23 @@ export class AddProductComponent implements OnInit {
     }
   }
 
-  onChangeFile(event: Event) {
+  onFileSelected(event: Event) {
     const target = event.target as HTMLInputElement;
     const files = target.files as FileList;
 
-    if (files[0]) {
-      let reader = new FileReader();
-      reader.readAsDataURL(files[0]);
-      reader.onload = function () {
-        console.log(reader.result);
-      };
-    }
+    this.convertFile(files[0]).subscribe((base64) => {
+      this.base64Output = 'data:image/jpeg;base64,' + base64;
+    });
   }
 
-  toDataURL = async (url: any) => {
-    var res = await fetch(url);
-    var blob = await res.blob();
-
-    const result = await new Promise((resolve, reject) => {
-      var reader = new FileReader();
-      reader.addEventListener(
-        'load',
-        function () {
-          resolve(reader.result);
-        },
-        false
-      );
-
-      reader.onerror = () => {
-        return reject(this);
-      };
-      reader.readAsDataURL(blob);
-    });
-
+  convertFile(file: File): Observable<string> {
+    const result = new ReplaySubject<string>(1);
+    const reader = new FileReader();
+    reader.readAsBinaryString(file);
+    reader.onload = (event) =>
+      result.next(btoa(event.target?.result as string));
     return result;
-  };
+  }
 
   back() {
     this.router.navigate(['products']);
