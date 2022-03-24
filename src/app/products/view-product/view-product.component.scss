@@ -54,10 +54,16 @@ mat-card {
     }
 }
 
-.loading {
-    width: 100%;
-    margin: 30px;
+ng-template {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .loading {
+        width: 100%;
+        margin: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
