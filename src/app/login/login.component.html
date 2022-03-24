@@ -2,13 +2,15 @@
   <mat-card>
     <mat-card-title>Entre com seu usuário</mat-card-title>
     <form [formGroup]="loginForm" class="loginForm">
-      <mat-form-field appearance="fill">
-        <mat-label>Login</mat-label>
-        <input formControlName="login" type="text" matInput />
-      </mat-form-field>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label> Login </mat-label>
+          <input formControlName="login" type="text" matInput />
+        </mat-form-field>
+      </div>
 
       <mat-form-field appearance="fill">
-        <mat-label>Senha</mat-label>
+        <mat-label> Senha </mat-label>
         <input formControlName="password" type="password" matInput />
       </mat-form-field>
 
